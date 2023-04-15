@@ -2,35 +2,32 @@
 
 clear
 
-echo ""
+printf "\n"
 php -v
-echo ""
-echo ""
+printf "\n\n"
 
-echo "PHP versions:"
+printf "PHP versions:\n"
 update-alternatives --list php
 
 php=$(php -r 'echo PHP_MAJOR_VERSION.".".PHP_MINOR_VERSION;')
 
-echo ""
+printf "\n"
 read -p "PHP version you wont? (n for exit): " answer
 
 if [[ "$answer" == [n] ]]; then
 	clear
-	echo "EXIT: nothing changed. "
-	echo ""
+	printf "EXIT: nothing changed. \n\n"
 	exit
 elif (($(echo "$answer == $php" | bc -l))); then
 	clear
-	echo "EXIT: no change needed. "
-	echo ""
+	printf "EXIT: no change needed. \n\n"
 	exit
 fi
 
-echo [PASSWORD] | sudo -S echo -n 2>/dev/random 1>/dev/random
+echo [PASSW0RD] | sudo -S echo -n 2>/dev/random 1>/dev/random
 sudo a2dismod "php$php"
 
-echo ""
+printf "\n"
 sudo a2enmod php$answer
 
 if (($(echo "$answer == 7.0" | bc -l))); then
@@ -45,8 +42,7 @@ elif (($(echo "$answer == 8.2" | bc -l))); then
 	answer=5
 else
 	clear
-	echo "EXIT: nothing changed. "
-	echo ""
+	printf "EXIT: nothing changed. \n\n"
 	exit
 fi
 
@@ -58,9 +54,7 @@ sudo service apache2 restart
 
 clear
 
-echo "DONE: php version has been changed!"
-echo ""
-echo ""
+printf "DONE: php version has been changed! \n\n\n"
 
 php -v
-echo ""
+printf "\n"
