@@ -1,10 +1,10 @@
-# php version change
+# PHP Version Changer
 
 
 # Description:
 	The PHP Version Changer is a shell script that automates the process of checking the current PHP version
-	installed on a system and allows for changing it with ease. This script provides a convenient way to
-	manage PHP versions for web developers and server administrators.
+	installed on a system and allows for changing it with ease for "APACHE 2". This script provides a convenient
+	way to manage PHP versions for web developers and server administrators.
 
 
 # Features:
@@ -16,7 +16,7 @@
 
 # Usage:
 	1. Download the script
-	2. change [PASSWORD] with your root password
-	3. run command "sudo chmod -R 777 ./php.sh" (olny for the fist time)
-	4. ./php.sh to run the script
-	5. you are good to go.
+	2. Change [PASSWORD] with your root password
+	3. Run command "sudo chmod -R 777 ./php.sh" (only for the first time)
+	4. "./php.sh" to run the script
+	5. You are good to go.
