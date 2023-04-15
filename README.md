@@ -18,4 +18,5 @@
 	1. Download the script
 	2. change [PASSWORD] with your root password
 	3. run command "sudo chmod -R 777 ./php.sh" (olny for the fist time)
-	4. you are good to go.
+	4. ./php.sh to run the script
+	5. you are good to go.
