@@ -6,6 +6,11 @@ printf "\n"
 php -v
 printf "\n\n"
 
+Danger='\033[0;31m'  # Red Color
+Success='\033[0;32m' # Green Color
+Warning='\033[1;33m' # Yellow Color
+NC='\033[0m'         # No Color
+
 printf "PHP versions:\n"
 update-alternatives --list php
 
@@ -16,11 +21,11 @@ read -p "PHP version you wont? (n for exit): " answer
 
 if [[ "$answer" == [n] ]]; then
 	clear
-	printf "EXIT: nothing changed. \n\n"
+	printf "${Warning} EXIT: nothing changed. ${NC} \n\n"
 	exit
 elif (($(echo "$answer == $php" | bc -l))); then
 	clear
-	printf "EXIT: no change needed. \n\n"
+	printf "${Warning} EXIT: no change needed. ${NC} \n\n"
 	exit
 fi
 
@@ -42,7 +47,7 @@ elif (($(echo "$answer == 8.2" | bc -l))); then
 	answer=5
 else
 	clear
-	printf "EXIT: nothing changed. \n\n"
+	printf "${Warning} EXIT: nothing changed. ${NC} \n\n"
 	exit
 fi
 
@@ -54,7 +59,7 @@ sudo service apache2 restart
 
 clear
 
-printf "DONE: php version has been changed! \n\n\n"
+printf "${Success} DONE: php version has been changed. ${NC} \n\n\n"
 
 php -v
 printf "\n"
